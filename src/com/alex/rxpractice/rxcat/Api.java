@@ -8,7 +8,14 @@ import java.util.List;
  * Created by alex on 16-3-7.
  */
 public interface Api {
-    List<Cat> queryCats(String query);
+
+    interface CatsQueryCallback {
+        void onCatListReceived(List<Cat> cats);
+
+        void onError(Exception e);
+    }
+
+    List<Cat> queryCats(String query,CatsQueryCallback catsQueryCallback);
 
     Uri store(Cat cat);
 }
