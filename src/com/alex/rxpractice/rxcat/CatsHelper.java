@@ -18,29 +18,35 @@ public class CatsHelper {
 
     ApiWrapper apiWrapper;
 
-    public void saveTheCutestCat(String query, final CutestCatCallback cutestCatCallback) {
-        apiWrapper.queryCats(query, new Callback<List<Cat>>() {
+    public AsyncJob<Uri> saveTheCutestCat(final String query) {
+        return new AsyncJob<Uri>() {
             @Override
-            public void onResult(List<Cat> result) {
-                Cat cat = findCutestCat(result);
-                apiWrapper.store(cat, new Callback<Uri>() {
-                    @Override
-                    public void onResult(Uri result) {
-                        cutestCatCallback.onCutestCatSaved(result);
-                    }
+            public void start(final Callback<Uri> callback) {
+                apiWrapper.queryCats(query)
+                        .start(new Callback<List<Cat>>() {
+                            @Override
+                            public void onResult(List<Cat> result) {
+                                Cat cat = findCutestCat(result);
+                                apiWrapper.store(cat)
+                                        .start(new Callback<Uri>() {
+                                            @Override
+                                            public void onResult(Uri result) {
+                                                callback.onResult(result);
+                                            }
 
-                    @Override
-                    public void onError(Exception e) {
-                        cutestCatCallback.onQueryFailed(e);
-                    }
-                });
+                                            @Override
+                                            public void onError(Exception e) {
+                                                callback.onError(e);
+                                            }
+                                        });
+                            }
+                            @Override
+                            public void onError(Exception e) {
+                                callback.onError(e);
+                            }
+                        });
             }
-
-            @Override
-            public void onError(Exception e) {
-                cutestCatCallback.onQueryFailed(e);
-            }
-        });
+        };
     }
 
     private Cat findCutestCat(List<Cat> cats) {

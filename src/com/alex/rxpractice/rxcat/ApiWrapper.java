@@ -10,31 +10,41 @@ import java.util.List;
 public class ApiWrapper {
     Api api;
 
-    public void queryCats(String query, final Callback<List<Cat>> catsCallback) {
-        api.queryCats(query, new Api.CatsQueryCallback() {
+    public AsyncJob<List<Cat>> queryCats(final String query) {
+        return new AsyncJob<List<Cat>>() {
             @Override
-            public void onCatListReceived(List<Cat> cats) {
-                catsCallback.onResult(cats);
-            }
+            public void start(final Callback<List<Cat>> callback) {
+                api.queryCats(query, new Api.CatsQueryCallback() {
+                    @Override
+                    public void onCatListReceived(List<Cat> cats) {
+                        callback.onResult(cats);
+                    }
 
-            @Override
-            public void onError(Exception e) {
-                catsCallback.onError(e);
+                    @Override
+                    public void onError(Exception e) {
+                        callback.onError(e);
+                    }
+                });
             }
-        });
+        };
     }
 
-    public void store(Cat cat, final Callback<Uri> uriCallback) {
-        api.store(cat, new Api.StoreCallback() {
+    public AsyncJob<Uri> store(final Cat cat) {
+        return new AsyncJob<Uri>() {
             @Override
-            public void onCateStored(Uri savedUri) {
-                uriCallback.onResult(savedUri);
-            }
+            public void start(final Callback<Uri> callback) {
+                api.store(cat, new Api.StoreCallback() {
+                    @Override
+                    public void onCateStored(Uri savedUri) {
+                        callback.onResult(savedUri);
+                    }
 
-            @Override
-            public void onStoreFailed(Exception e) {
-                uriCallback.onError(e);
+                    @Override
+                    public void onStoreFailed(Exception e) {
+                        callback.onError(e);
+                    }
+                });
             }
-        });
+        };
     }
 }
