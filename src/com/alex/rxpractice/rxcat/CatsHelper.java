@@ -19,34 +19,52 @@ public class CatsHelper {
     ApiWrapper apiWrapper;
 
     public AsyncJob<Uri> saveTheCutestCat(final String query) {
-        return new AsyncJob<Uri>() {
+        final AsyncJob<List<Cat>> catsListAsyncJob = apiWrapper.queryCats(query);
+        final AsyncJob<Cat> cutestCatAsyncJob = new AsyncJob<Cat>() {
             @Override
-            public void start(final Callback<Uri> callback) {
-                apiWrapper.queryCats(query)
-                        .start(new Callback<List<Cat>>() {
-                            @Override
-                            public void onResult(List<Cat> result) {
-                                Cat cat = findCutestCat(result);
-                                apiWrapper.store(cat)
-                                        .start(new Callback<Uri>() {
-                                            @Override
-                                            public void onResult(Uri result) {
-                                                callback.onResult(result);
-                                            }
+            public void start(final Callback<Cat> callback) {
+                catsListAsyncJob.start(new Callback<List<Cat>>() {
+                    @Override
+                    public void onResult(List<Cat> result) {
+                        callback.onResult(findCutestCat(result));
+                    }
 
-                                            @Override
-                                            public void onError(Exception e) {
-                                                callback.onError(e);
-                                            }
-                                        });
-                            }
-                            @Override
-                            public void onError(Exception e) {
-                                callback.onError(e);
-                            }
-                        });
+                    @Override
+                    public void onError(Exception e) {
+                        callback.onError(e);
+                    }
+                });
             }
         };
+
+        AsyncJob<Uri> storedUriAsyncJob = new AsyncJob<Uri>() {
+            @Override
+            public void start(final Callback<Uri> cutestCatCallback) {
+                cutestCatAsyncJob.start(new Callback<Cat>() {
+                    @Override
+                    public void onResult(Cat cutest) {
+                        apiWrapper.store(cutest)
+                                .start(new Callback<Uri>() {
+                                    @Override
+                                    public void onResult(Uri result) {
+                                        cutestCatCallback.onResult(result);
+                                    }
+
+                                    @Override
+                                    public void onError(Exception e) {
+                                        cutestCatCallback.onError(e);
+                                    }
+                                });
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        cutestCatCallback.onError(e);
+                    }
+                });
+            }
+        };
+        return storedUriAsyncJob;
     }
 
     private Cat findCutestCat(List<Cat> cats) {
