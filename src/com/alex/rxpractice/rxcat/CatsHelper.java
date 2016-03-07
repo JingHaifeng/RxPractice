@@ -16,25 +16,24 @@ public class CatsHelper {
         void onQueryFailed(Exception e);
     }
 
-    Api api;
+    ApiWrapper apiWrapper;
 
     public void saveTheCutestCat(String query, final CutestCatCallback cutestCatCallback) {
-        List<Cat> cats = api.queryCats(query, new Api.CatsQueryCallback() {
+        apiWrapper.queryCats(query, new Callback<List<Cat>>() {
             @Override
-            public void onCatListReceived(List<Cat> cats) {
-                Cat cat = findCutestCat(cats);
-                Uri savedUri = api.store(cat, new Api.StoreCallback() {
+            public void onResult(List<Cat> result) {
+                Cat cat = findCutestCat(result);
+                apiWrapper.store(cat, new Callback<Uri>() {
                     @Override
-                    public void onCateStored(Uri savedUri) {
-                        cutestCatCallback.onCutestCatSaved(savedUri);
+                    public void onResult(Uri result) {
+                        cutestCatCallback.onCutestCatSaved(result);
                     }
 
                     @Override
-                    public void onStoreFailed(Exception e) {
+                    public void onError(Exception e) {
                         cutestCatCallback.onQueryFailed(e);
                     }
                 });
-                cutestCatCallback.onCutestCatSaved(savedUri);
             }
 
             @Override
