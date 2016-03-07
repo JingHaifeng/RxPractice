@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="247dfe7f-58ec-4b1c-a0a7-5da304aa9707" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/Func.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/AsyncJob.java" afterPath="$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/AsyncJob.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/CatsHelper.java" afterPath="$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/CatsHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -54,27 +56,27 @@
       <file leaf-file-name="CatsHelper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/CatsHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44385028">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.61497325">
+              <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#537#1085#0" expanded="true" />
-                <element signature="e#799#800#0" expanded="true" />
-                <element signature="e#887#888#0" expanded="true" />
-                <element signature="e#973#974#0" expanded="true" />
-                <element signature="e#1040#1041#0" expanded="true" />
-                <element signature="e#1084#1085#0" expanded="true" />
-                <element signature="e#1130#2222#0" expanded="true" />
-                <element signature="e#1617#1618#0" expanded="true" />
-                <element signature="e#1731#1732#0" expanded="true" />
-                <element signature="e#1849#1850#0" expanded="true" />
-                <element signature="e#1957#1958#0" expanded="true" />
-                <element signature="e#2101#2102#0" expanded="true" />
-                <element signature="e#2177#2178#0" expanded="true" />
-                <element signature="e#2221#2222#0" expanded="true" />
-                <element signature="e#2311#2312#0" expanded="true" />
-                <element signature="e#2355#2356#0" expanded="true" />
+                <element signature="e#558#722#0" expanded="true" />
+                <element signature="e#721#722#0" expanded="true" />
+                <element signature="e#794#973#0" expanded="true" />
+                <element signature="e#972#973#0" expanded="true" />
+                <element signature="e#1063#1064#0" expanded="true" />
+                <element signature="e#1107#1108#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Func.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/Func.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -83,8 +85,21 @@
         <entry file="file://$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/AsyncJob.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <element signature="e#277#834#0" expanded="true" />
+                <element signature="e#722#723#0" expanded="true" />
+                <element signature="e#789#790#0" expanded="true" />
+                <element signature="e#833#834#0" expanded="true" />
+                <element signature="e#969#1943#0" expanded="true" />
+                <element signature="e#1421#1422#0" expanded="true" />
+                <element signature="e#1510#1511#0" expanded="true" />
+                <element signature="e#1612#1613#0" expanded="true" />
+                <element signature="e#1695#1696#0" expanded="true" />
+                <element signature="e#1831#1832#0" expanded="true" />
+                <element signature="e#1898#1899#0" expanded="true" />
+                <element signature="e#1942#1943#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,8 +169,9 @@
         <option value="$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/Api.java" />
         <option value="$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/Callback.java" />
         <option value="$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/ApiWapper.java" />
-        <option value="$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/AsyncJob.java" />
         <option value="$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/ApiWrapper.java" />
+        <option value="$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/Func.java" />
+        <option value="$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/AsyncJob.java" />
         <option value="$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/CatsHelper.java" />
       </list>
     </option>
@@ -514,12 +530,12 @@
       <created>1457330687972</created>
       <option name="number" value="Default" />
       <updated>1457330687972</updated>
-      <workItem from="1457330692827" duration="4656000" />
+      <workItem from="1457330692827" duration="6548000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4656000" />
+    <option name="totallyTimeSpent" value="6548000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
@@ -587,14 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/AsyncJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/ApiWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -617,28 +625,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/Func.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/AsyncJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#277#834#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#833#834#0" expanded="true" />
+            <element signature="e#969#1943#0" expanded="true" />
+            <element signature="e#1421#1422#0" expanded="true" />
+            <element signature="e#1510#1511#0" expanded="true" />
+            <element signature="e#1612#1613#0" expanded="true" />
+            <element signature="e#1695#1696#0" expanded="true" />
+            <element signature="e#1831#1832#0" expanded="true" />
+            <element signature="e#1898#1899#0" expanded="true" />
+            <element signature="e#1942#1943#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/alex/rxpractice/rxcat/CatsHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44385028">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.61497325">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#537#1085#0" expanded="true" />
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-            <element signature="e#1084#1085#0" expanded="true" />
-            <element signature="e#1130#2222#0" expanded="true" />
-            <element signature="e#1617#1618#0" expanded="true" />
-            <element signature="e#1731#1732#0" expanded="true" />
-            <element signature="e#1849#1850#0" expanded="true" />
-            <element signature="e#1957#1958#0" expanded="true" />
-            <element signature="e#2101#2102#0" expanded="true" />
-            <element signature="e#2177#2178#0" expanded="true" />
-            <element signature="e#2221#2222#0" expanded="true" />
-            <element signature="e#2311#2312#0" expanded="true" />
-            <element signature="e#2355#2356#0" expanded="true" />
+            <element signature="e#558#722#0" expanded="true" />
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="e#794#973#0" expanded="true" />
+            <element signature="e#972#973#0" expanded="true" />
+            <element signature="e#1063#1064#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
           </folding>
         </state>
       </provider>
